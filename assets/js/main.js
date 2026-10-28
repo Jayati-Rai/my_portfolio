@@ -187,4 +187,111 @@
 				}
 			});
 
+	// Hero 3D background.
+		var $heroVisual = $('.hero-visual');
+		if ($heroVisual.length > 0 && typeof THREE !== 'undefined') {
+			var heroScene = new THREE.Scene();
+			var heroCamera = new THREE.PerspectiveCamera(42, $heroVisual.width() / $heroVisual.height(), 0.1, 1000);
+			var heroRenderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+			heroRenderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+			heroRenderer.setClearColor(0x000000, 0);
+			heroRenderer.setSize($heroVisual.width(), $heroVisual.height());
+			$heroVisual.append(heroRenderer.domElement);
+
+			var ambientLight = new THREE.AmbientLight(0xffffff, 1.5);
+			heroScene.add(ambientLight);
+
+			var pointLight = new THREE.PointLight(0x8bc6ff, 2.5, 100);
+			pointLight.position.set(4, 3, 5);
+			heroScene.add(pointLight);
+
+			var heroGroup = new THREE.Group();
+			var heroCore = new THREE.Mesh(
+				new THREE.IcosahedronGeometry(1.5, 1),
+				new THREE.MeshPhysicalMaterial({
+					color: 0x7f8cff,
+					emissive: 0x2739b0,
+					metalness: 0.7,
+					roughness: 0.18,
+					transparent: true,
+					opacity: 0.95
+				})
+			);
+
+			var heroWireframe = new THREE.Mesh(
+				new THREE.IcosahedronGeometry(2.05, 1),
+				new THREE.MeshBasicMaterial({
+					color: 0xbfe7ff,
+					wireframe: true,
+					transparent: true,
+					opacity: 0.38
+				})
+			);
+
+			var heroHalo = new THREE.Mesh(
+				new THREE.TorusKnotGeometry(1.15, 0.22, 160, 24),
+				new THREE.MeshStandardMaterial({
+					color: 0xd6a3ff,
+					metalness: 0.8,
+					roughness: 0.2,
+					emissive: 0x3c235f
+				})
+			);
+			heroHalo.rotation.x = 1.3;
+			heroHalo.rotation.y = 0.6;
+
+			heroGroup.add(heroHalo);
+			heroGroup.add(heroCore);
+			heroGroup.add(heroWireframe);
+			heroScene.add(heroGroup);
+
+			heroCamera.position.set(0, 0.3, 6.3);
+			heroGroup.position.set(0.4, 0.2, 0);
+
+			var heroClock = new THREE.Clock();
+			function renderHeroBackground() {
+				var elapsed = heroClock.getElapsedTime();
+				heroGroup.rotation.x = elapsed * 0.45;
+				heroGroup.rotation.y = elapsed * 0.75;
+				heroCore.rotation.x -= 0.006;
+				heroCore.rotation.y += 0.01;
+				heroWireframe.rotation.y -= 0.008;
+				heroHalo.rotation.z = elapsed * 0.8;
+				heroRenderer.render(heroScene, heroCamera);
+				requestAnimationFrame(renderHeroBackground);
+			}
+			renderHeroBackground();
+
+			$(window).on('resize.hero3d', function() {
+				var width = $heroVisual.width();
+				var height = $heroVisual.height();
+				heroCamera.aspect = width / height;
+				heroCamera.updateProjectionMatrix();
+				heroRenderer.setSize(width, height);
+			});
+		}
+
+	window.scrollCarousel = function(button) {
+		var targetId = button.getAttribute('data-target');
+		var direction = button.getAttribute('data-direction') === 'left' ? -1 : 1;
+		var target = document.getElementById(targetId);
+
+		if (!target) {
+			return;
+		}
+
+		var scrollAmount = Math.max(target.clientWidth * 0.75, 220);
+		target.scrollBy({
+			left: scrollAmount * direction,
+			behavior: 'smooth'
+		});
+	};
+
+	document.querySelectorAll('.scroll-btn').forEach(function(button) {
+		button.addEventListener('click', function(event) {
+			event.preventDefault();
+			window.scrollCarousel(button);
+		});
+	});
+
 })(jQuery);

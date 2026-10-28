@@ -21,7 +21,9 @@
 						<ul>
 							<li><a href="#intro">Home</a></li>
 							<li><a href="#one">Projects</a></li>
-							<li><a href="#two">Skills & Education</a></li>
+							<li><a href="#skills">Skills</a></li>
+							<li><a href="#education">Education</a></li>
+							<li><a href="#certifications">Certifications</a></li>
 							<li><a href="#three">Contact</a></li>
 						</ul>
 					</nav>
@@ -33,7 +35,8 @@
 
 				<!-- Intro -->
 					<section id="intro" class="wrapper style1 fullscreen fade-up">
-						<div class="inner">
+						<div class="hero-visual" aria-hidden="true"></div>
+						<div class="inner hero-copy">
 							<p class="eyebrow">Software Developer • Android • Computational Science</p>
 							<h1>Jayati Rai</h1>
 							<p>I build software with a focus on Android development, practical problem solving, and computational applications. Currently pursuing an <strong>M.Sc. in Computational Science & Applications at Banaras Hindu University.</strong></p>
@@ -45,49 +48,60 @@
 					</section>
 
 				<!-- Projects -->
-					<section id="one" class="wrapper style2 spotlights">
-						<section>
-							<a href="https://github.com/Jayati-Rai/Eccian2.0" class="image"><img src="images/eccian2.png" alt="Android application project" data-position="center center" /></a>
-							<div class="content">
-								<div class="inner">
-									<p class="eyebrow">Featured Project</p>
-									<h2>Eccian2.0</h2>
-									<p>An educational hub designed to bring academic resources and student-focused functionality together in one application. Built as part of my Android development work using modern Android technologies.</p>
-									<ul class="tech"><li>Kotlin</li><li>Jetpack Compose</li><li>Firebase</li><li>Android</li></ul>
-									<ul class="actions"><li><a href="https://github.com/Jayati-Rai" class="button">View project</a></li></ul>
+					<section id="one" class="wrapper style2 fade-up">
+						<div class="inner">
+							<div class="section-header with-controls">
+								<h2>Projects</h2>
+								<div class="scroll-controls" aria-label="Project controls">
+									<button type="button" class="scroll-btn" data-direction="left" data-target="project-grid" aria-label="Scroll projects left" onclick="scrollCarousel(this);">&#8249;</button>
+									<button type="button" class="scroll-btn" data-direction="right" data-target="project-grid" aria-label="Scroll projects right" onclick="scrollCarousel(this);">&#8250;</button>
 								</div>
 							</div>
-						</section>
-						<section>
-							<a href="https://github.com/Jayati-Rai/Shelf_Organizer" class="image"><img src="images/shelf_organizer.png" alt="Shelf Organizer project" data-position="top center" /></a>
-							<div class="content">
-								<div class="inner">
-									<p class="eyebrow">Android Application</p>
-									<h2>Shelf Organizer</h2>
-									<p>An inventory and organization application for managing items across multiple stores, with a focus on structured data, search, and persistent storage.</p>
-									<ul class="tech"><li>Kotlin</li><li>Jetpack Compose</li><li>Firestore</li><li>Room</li><li>SQL</li></ul>
-									<ul class="actions"><li><a href="https://github.com/Jayati-Rai" class="button">View project</a></li></ul>
-								</div>
+							<div class="project-grid" id="project-grid">
+								<article class="project-card">
+									<a href="https://github.com/Jayati-Rai/Eccian2.0" class="project-image-link">
+										<img src="images/eccian2.png" alt="Android application project" />
+									</a>
+									<div class="project-content">
+										<p class="eyebrow">Featured Project</p>
+										<h3>Eccian2.0</h3>
+										<p>An educational hub designed to bring academic resources and student-focused functionality together in one application. Built as part of my Android development work using modern Android technologies.</p>
+										<ul class="tech"><li>Kotlin</li><li>Jetpack Compose</li><li>Firebase</li><li>Android</li></ul>
+										<ul class="actions"><li><a href="https://github.com/Jayati-Rai/Eccian2.0" class="button">View project</a></li></ul>
+									</div>
+								</article>
+								<article class="project-card">
+									<a href="https://github.com/Jayati-Rai/Shelf_Organizer" class="project-image-link">
+										<img src="images/shelf_organizer.png" alt="Shelf Organizer project" />
+									</a>
+									<div class="project-content">
+										<p class="eyebrow">Android Application</p>
+										<h3>Shelf Organizer</h3>
+										<p>An inventory and organization application for managing items across multiple stores, with a focus on structured data, search, and persistent storage.</p>
+										<ul class="tech"><li>Kotlin</li><li>Jetpack Compose</li><li>Firestore</li><li>Room</li><li>SQL</li></ul>
+										<ul class="actions"><li><a href="https://github.com/Jayati-Rai/Shelf_Organizer" class="button">View project</a></li></ul>
+									</div>
+								</article>
+								<article class="project-card">
+									<a href="https://github.com/Jayati-Rai/little_lemon_app_" class="project-image-link">
+										<img src="images/little_lemon.png" alt="Little Lemon Android application" />
+									</a>
+									<div class="project-content">
+										<p class="eyebrow">Android Application</p>
+										<h3>Little Lemon</h3>
+										<p>An Android application project built to strengthen practical skills in mobile UI development, application structure, and modern Android development workflows.</p>
+										<ul class="tech"><li>Android</li><li>Kotlin</li><li>Jetpack Compose</li></ul>
+										<ul class="actions"><li><a href="https://github.com/Jayati-Rai/little_lemon_app_" class="button">View project</a></li></ul>
+									</div>
+								</article>
 							</div>
-						</section>
-						<section>
-							<a href="https://github.com/Jayati-Rai/little_lemon_app_" class="image"><img src="images/little_lemon.png" alt="Little Lemon Android application" data-position="25% 25%" /></a>
-							<div class="content">
-								<div class="inner">
-									<p class="eyebrow">Android Application</p>
-									<h2>Little Lemon</h2>
-									<p>An Android application project built to strengthen practical skills in mobile UI development, application structure, and modern Android development workflows.</p>
-									<ul class="tech"><li>Android</li><li>Kotlin</li><li>Jetpack Compose</li></ul>
-									<ul class="actions"><li><a href="https://github.com/Jayati-Rai" class="button">View project</a></li></ul>
-								</div>
-							</div>
-						</section>
+						</div>
 					</section>
 
-				<!-- Skills & Education -->
-					<section id="two" class="wrapper style3 fade-up">
+				<!-- Skills -->
+					<section id="skills" class="wrapper style3 fade-up">
 						<div class="inner">
-							<h2>Skills & Education</h2>
+							<h2>Skills</h2>
 							<p>My background combines software development with a foundation in physics and computational science. I enjoy understanding how systems work and turning that understanding into useful software.</p>
 							<div class="features">
 								<section>
@@ -111,14 +125,14 @@
 									<p>Git, GitHub, Android Studio, Firebase and modern development workflows. I also have experience with React and React Native coursework.</p>
 								</section>
 								<section>
-									<span class="icon solid major fa-graduation-cap"></span>
-									<h3>M.Sc. Computational Science & Applications</h3>
-									<p>Banaras Hindu University, Varanasi. My current postgraduate work connects computation, scientific problem solving, data, and applications.</p>
-								</section>
-								<section>
 									<span class="icon solid major fa-atom"></span>
 									<h3>Physics & Research</h3>
 									<p>Background in Physics with an interest in computational research, scientific computing, machine learning, and astronomy-related problems.</p>
+								</section>
+								<section>
+									<span class="icon solid major fa-cubes"></span>
+									<h3>Problem Solving</h3>
+									<p>Analytical thinking, system design, debugging, and building practical solutions for real-world software challenges.</p>
 								</section>
 							</div>
 							<ul class="actions">
@@ -127,55 +141,91 @@
 						</div>
 					</section>
 
+				<!-- Education -->
+					<section id="education" class="wrapper style1 fade-up">
+						<div class="inner">
+							<h2>Education</h2>
+							<div class="education-grid">
+								<div class="education-item">
+									<span class="education-period">2023 - Present</span>
+									<h3>M.Sc. in Computational Science & Applications</h3>
+									<p>Banaras Hindu University, Varanasi</p>
+								</div>
+								<div class="education-item">
+									<span class="education-period">Physics Foundation</span>
+									<h3>Scientific & Analytical Background</h3>
+									<p>Focused on problem solving, quantitative reasoning, and computational approaches to real-world challenges.</p>
+								</div>
+							</div>
+						</div>
+					</section>
+
+				<!-- Certifications -->
+					<section id="certifications" class="wrapper style3-alt fade-up">
+						<div class="inner">
+							<div class="section-header with-controls">
+								<h2>Certifications</h2>
+								<div class="scroll-controls" aria-label="Certification controls">
+									<button type="button" class="scroll-btn" data-direction="left" data-target="certification-grid" aria-label="Scroll certifications left" onclick="scrollCarousel(this);">&#8249;</button>
+									<button type="button" class="scroll-btn" data-direction="right" data-target="certification-grid" aria-label="Scroll certifications right" onclick="scrollCarousel(this);">&#8250;</button>
+								</div>
+							</div>
+							<p>Focused learning milestones across Android, software engineering, and computational problem-solving.</p>
+							<div class="certification-grid" id="certification-grid">
+								<article class="certification-card">
+									<div class="certification-badge">Android</div>
+									<h3>Android Development Fundamentals</h3>
+									<p>Core principles of Android app development, UI design, and Kotlin-based application building.</p>
+									<span>Learning Track</span>
+								</article>
+								<article class="certification-card">
+									<div class="certification-badge">Backend</div>
+									<h3>Data & Backend Essentials</h3>
+									<p>Hands-on exposure to Firebase, SQL, APIs, and modern backend patterns for practical app development.</p>
+									<span>Learning Track</span>
+								</article>
+								<article class="certification-card">
+									<div class="certification-badge">Programming</div>
+									<h3>Data Structures & Algorithms</h3>
+									<p>Structured problem solving with an emphasis on efficient logic, optimization, and clean implementation.</p>
+									<span>Core Study</span>
+								</article>
+								<article class="certification-card">
+									<div class="certification-badge">Computing</div>
+									<h3>Computational Science Foundations</h3>
+									<p>Application of scientific methods, computation, and analytical modeling to software and research problems.</p>
+									<span>Academic Focus</span>
+								</article>
+							</div>
+						</div>
+					</section>
+
 				<!-- Contact -->
 					<section id="three" class="wrapper style1 fade-up">
 						<div class="inner">
 							<h2>Get in touch</h2>
 							<p>I’m interested in software development opportunities, internships, collaborations, and projects where I can build useful systems and keep learning.</p>
-							<div class="split style1">
-								<section>
-									<form method="post" action="#">
-										<div class="fields">
-											<div class="field half">
-												<label for="name">Name</label>
-												<input type="text" name="name" id="name" />
-											</div>
-											<div class="field half">
-												<label for="email">Email</label>
-												<input type="text" name="email" id="email" />
-											</div>
-											<div class="field">
-												<label for="message">Message</label>
-												<textarea name="message" id="message" rows="5"></textarea>
-											</div>
-										</div>
-										<ul class="actions"><li><a href="" class="button submit">Send Message</a></li></ul>
-									</form>
-								</section>
-								<section>
-									<ul class="contact">
-										<li>
-											<h3>Email</h3>
-											<a href="mailto:jayatirai3@gmail.com">jayatirai3@gmail.com</a>
-										</li>
-										<li>
-											<h3>GitHub</h3>
-											<a href="https://github.com/Jayati-Rai">github.com/Jayati-Rai</a>
-										</li>
-										<li>
-											<h3>LinkedIn</h3>
-											<a href="https://www.linkedin.com/in/jayati-rai/">linkedin.com/in/jayati-rai</a>
-										</li>
-										<li>
-											<h3>Social</h3>
-											<ul class="icons">
-												<li><a href="https://github.com/Jayati-Rai" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
-												<li><a href="https://www.linkedin.com/in/jayati-rai/" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
-											</ul>
-										</li>
+							<ul class="contact">
+								<li>
+									<h3>Email</h3>
+									<a href="mailto:jayatirai3@gmail.com">jayatirai3@gmail.com</a>
+								</li>
+								<li>
+									<h3>GitHub</h3>
+									<a href="https://github.com/Jayati-Rai">github.com/Jayati-Rai</a>
+								</li>
+								<li>
+									<h3>LinkedIn</h3>
+									<a href="https://www.linkedin.com/in/jayati-rai/">linkedin.com/in/jayati-rai</a>
+								</li>
+								<li>
+									<h3>Social</h3>
+									<ul class="icons">
+										<li><a href="https://github.com/Jayati-Rai" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+										<li><a href="https://www.linkedin.com/in/jayati-rai/" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
 									</ul>
-								</section>
-							</div>
+								</li>
+							</ul>
 						</div>
 					</section>
 
@@ -191,6 +241,7 @@
 			</footer>
 
 		<!-- Scripts -->
+			<script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
 			<script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/jquery.scrollex.min.js"></script>
 			<script src="assets/js/jquery.scrolly.min.js"></script>
